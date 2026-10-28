@@ -1,38 +1,46 @@
-# Customer Churn Analysis
+# Customer Churn Analysis – Power BI Dashboard
 
-Analysis of customer churn to find why customers leave and which factors predict it.
+End-to-end churn analysis with a Power BI dashboard to understand why customers leave and which customers are at high risk.
 
 ## Objective
-Identify the key drivers of churn and build a model to predict which customers are likely to leave.
+Measure churn, identify its main drivers, and flag high-risk customers so the business can plan retention strategies.
+
+## Dashboard Preview
+![Dashboard](images/dashboard.png)
 
 ## Dataset
-- Source: (e.g., Kaggle / Telco Customer Churn)
-- Rows / columns: (e.g., 7,043 customers, 21 features)
-- Target variable: `Churn` (Yes/No)
+- Source: (add the dataset link, e.g., Kaggle or the source named in your tutorial)
+- Size: (rows x columns)
+- Target: Churn (Yes/No)
 
-## Tools & Libraries
-Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter Notebook
+## Tools Used
+Microsoft Excel, Power BI Desktop, Power Query, DAX
 
 ## Project Workflow
-1. Data cleaning and preprocessing
-2. Exploratory data analysis (EDA)
-3. Feature engineering
-4. Model building (Logistic Regression, Random Forest, etc.)
-5. Model evaluation (accuracy, precision, recall, ROC-AUC)
+1. Data cleaning and transformation in Power Query (fixing data types, nulls, duplicates)
+2. Creating calculated columns (e.g., tenure groups, age groups)
+3. Writing DAX measures (Total Customers, Churned Customers, Churn Rate %)
+4. Building the retention dashboard (slicers by contract, gender, payment method, etc.)
+5. Identifying high-risk customers
+6. Summarizing business insights
 
-## Key Findings
-- Finding 1 (e.g., month-to-month contract customers churn the most)
-- Finding 2
-- Finding 3
+## Key Insights
+- (e.g., Churn rate is X% overall)
+- (e.g., Month-to-month contract customers churn the most)
+- (e.g., Customers with tenure under 12 months are highest risk)
 
-## Results
-Best model: (name) with (metric) of (value).
+## Recommendations
+- (e.g., Offer discounts for long-term contracts)
+- (e.g., Target new customers with onboarding offers)
 
-## How to Run
-git clone https://github.com/YOUR-USERNAME/customer-churn-analysis.git
-cd customer-churn-analysis
-pip install -r requirements.txt
-jupyter notebook
+## Files
+- `Customer_Churn_Dashboard.pbix`: Power BI file
+- `data/`: dataset
+- `images/`: dashboard screenshots
+- `Customer_Churn_Dashboard.pdf`: exported report
+
+## Credits
+Tutorial reference: Guide of MAD (YouTube) – https://youtu.be/tejdn-E6c3k
 
 ## Author
-Bjorn – [LinkedIn / GitHub link]
+Om Jawale– [https://www.linkedin.com/in/om-jawale-720837305/]
