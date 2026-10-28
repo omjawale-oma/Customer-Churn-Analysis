@@ -2,8 +2,7 @@
 
 An end-to-end customer churn analysis of a telecom dataset. The project cleans messy raw data, measures churn with DAX, and presents the findings in an interactive Power BI dashboard that highlights why customers leave and which customers are at high risk.
 
-## Dashboard Preview
-![Customer Churn Analysis Dashboard](images/dashboard.png)
+
 
 ## Objective
 - Measure the overall churn rate
