@@ -1,43 +1,77 @@
 # Customer Churn Analysis – Power BI Dashboard
 
-End-to-end churn analysis with a Power BI dashboard to understand why customers leave and which customers are at high risk.
+An end-to-end customer churn analysis of a telecom dataset. The project cleans messy raw data, measures churn with DAX, and presents the findings in an interactive Power BI dashboard that highlights why customers leave and which customers are at high risk.
+
+## Dashboard Preview
+![Customer Churn Analysis Dashboard](images/dashboard.png)
 
 ## Objective
-Measure churn, identify its main drivers, and flag high-risk customers so the business can plan retention strategies.
+- Measure the overall churn rate
+- Find which customer groups (contract, tenure, services) churn the most
+- Flag high-risk customers
+- Suggest ways to improve retention
 
 ## Dataset
-- Source: (add the dataset link, e.g., Kaggle or the source named in your tutorial)
-- Size: (rows x columns)
-- Target: Churn (Yes/No)
+- File: `telco_churn_unclean.csv`
+- Size: 7,048 rows and 21 columns (7,043 unique customers after removing duplicates)
+- Target column: `Churn` (Yes/No)
+- Contents: customer demographics (gender, senior citizen, partner, dependents), account information (tenure, contract, payment method, paperless billing), services (phone, internet, online security, backup, streaming, etc.) and charges (monthly and total)
 
 ## Tools Used
-Microsoft Excel, Power BI Desktop, Power Query, DAX
+- Microsoft Excel
+- Power BI Desktop
+- Power Query
+- DAX
 
-## Project Workflow
-1. Data cleaning and transformation in Power Query (fixing data types, nulls, duplicates)
-2. Creating calculated columns (e.g., tenure groups, age groups)
-3. Writing DAX measures (Total Customers, Churned Customers, Churn Rate %)
-4. Building the retention dashboard (slicers by contract, gender, payment method, etc.)
-5. Identifying high-risk customers
-6. Summarizing business insights
+## Data Cleaning (Power Query)
+The raw file was intentionally messy. Issues found and fixed:
+- 5 duplicate rows removed
+- `MonthlyCharges` stored as text, with some values containing a `$` sign – symbol removed and converted to a number
+- 134 blank or non-numeric values in `TotalCharges` – handled and converted to a number
+- Inconsistent labels in `Contract` (`month to month` vs `Month-to-month`) – standardized
+- Extra trailing spaces in `PaymentMethod` – trimmed
+
+## DAX Measures and Columns
+- Total Customers, Churned Customers, Churn Rate %
+- Average monthly charges for retained vs churned customers
+- Tenure Band (0–6 months, 6–12 months, 12+ months)
+- Customer Type (Existing / New)
+- Risk Type (Normal / High Risk) for retained customers
 
 ## Key Insights
-- (e.g., Churn rate is X% overall)
-- (e.g., Month-to-month contract customers churn the most)
-- (e.g., Customers with tenure under 12 months are highest risk)
+- **7,043** total customers, **1,869** churned, giving an overall churn rate of **26.54%**
+- **Month-to-month contracts drive churn:** 1,655 of the 1,869 churned customers (about 89%) were on month-to-month contracts, compared with 166 on one-year and 48 on two-year contracts
+- **New customers are the most at risk:** churn rate is 52.94% in the first 6 months, 35.89% at 6–12 months, and 17.13% after 12 months
+- **Churned customers pay more:** average monthly charges are about $74 for churned customers vs about $61 for retained customers
+- **633 retained customers are flagged High Risk** and are good targets for retention campaigns
 
 ## Recommendations
-- (e.g., Offer discounts for long-term contracts)
-- (e.g., Target new customers with onboarding offers)
+- Offer discounts or benefits to move month-to-month customers onto one- or two-year contracts
+- Build onboarding and engagement programs for the first 6 months, when churn is highest
+- Review pricing and plan fit for high-spending customers who are leaving
+- Contact the high-risk group early with retention offers
 
-## Files
-- `Customer_Churn_Dashboard.pbix`: Power BI file
-- `data/`: dataset
-- `images/`: dashboard screenshots
-- `Customer_Churn_Dashboard.pdf`: exported report
+## Repository Structure
+```
+customer-churn-analysis/
+├── data/
+│   └── telco_churn_unclean.csv
+├── images/
+│   └── dashboard.png
+├── Customer_Churn_Dashboard.pbix
+├── Churn_DataSet_Dashboard.pdf
+├── churn_analysis.py
+└── README.md
+```
 
-## Credits
-Tutorial reference: Guide of MAD (YouTube) – https://youtu.be/tejdn-E6c3k
+## How to Use
+1. Download or clone the repository
+2. Open `Customer_Churn_Dashboard.pbix` in Power BI Desktop
+3. If Power BI cannot find the data, go to Transform data → Data source settings and point it to `data/telco_churn_unclean.csv`
+
+
+```
 
 ## Author
-Om Jawale– [https://www.linkedin.com/in/om-jawale-720837305/]
+**Om Jawale**
+GitHub: https://github.com/omjawale-oma
