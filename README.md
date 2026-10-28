@@ -5,9 +5,6 @@ End-to-end churn analysis with a Power BI dashboard to understand why customers 
 ## Objective
 Measure churn, identify its main drivers, and flag high-risk customers so the business can plan retention strategies.
 
-## Dashboard Preview
-![Dashboard](images/dashboard.png)
-
 ## Dataset
 - Source: (add the dataset link, e.g., Kaggle or the source named in your tutorial)
 - Size: (rows x columns)
